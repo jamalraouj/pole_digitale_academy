@@ -1,8 +1,17 @@
 package Entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.Date;
 
+@Entity
 public class Activity {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String title;
     private String dess;
     private Type type;
@@ -10,6 +19,14 @@ public class Activity {
     private Date endDate;
     private Status status;
     private Responsable responsable;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -58,8 +75,11 @@ public class Activity {
     public void setStatus(Status status) {
         this.status = status;
     }
+    public Activity() {
 
-    public Activity(String title, String dess, Type type, Date startDate, Date endDate, Status status, Responsable responsable) {
+    }
+    public Activity(int id,String title, String dess, Type type, Date startDate, Date endDate, Status status, Responsable responsable) {
+        this.id=id;
         this.title = title;
         this.dess = dess;
         this.type = type;

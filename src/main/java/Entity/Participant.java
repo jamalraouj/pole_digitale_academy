@@ -1,10 +1,9 @@
 package Entity;
-
+import jakarta.persistence.Entity;
+@Entity
 public class Participant extends User{
-
     private String domaine;
     private String structure;
-
 
 
     public String getDomaine() {
@@ -21,6 +20,9 @@ public class Participant extends User{
 
     public void setStructure(String structure) {
         this.structure = structure;
+    }
+    public Participant() {
+
     }
 
     public Participant(int id, String name, String phone, String email, String password, Boolean status, Role role, String domaine, String structure) {

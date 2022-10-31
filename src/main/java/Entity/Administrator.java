@@ -1,5 +1,8 @@
 package Entity;
 
-public class Administrator {
+import jakarta.persistence.Entity;
+
+@Entity
+public class Administrator extends User{
 
 }
