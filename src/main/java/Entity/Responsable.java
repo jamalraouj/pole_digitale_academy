@@ -1,8 +1,13 @@
 package Entity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+
 @Entity
 public class Responsable extends User {
     private String domaine;
+//    @Enumerated(EnumType.STRING)
     private TypeResponsable TypeResp;
 
     public String getDomaine() {

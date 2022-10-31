@@ -1,10 +1,9 @@
 package Entity;
 
 import java.util.Date;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+
+import jakarta.persistence.*;
+
 @Entity
 public class Exercise {
     @Id
@@ -12,6 +11,7 @@ public class Exercise {
     private int id;
     private Date startDate;
     private Date endDate;
+    @Enumerated(EnumType.STRING)
     private Status status;
 
 
