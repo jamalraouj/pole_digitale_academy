@@ -1,7 +1,12 @@
 package Entity;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.PrimaryKeyJoinColumn;
+
 @Entity
 public class Participant extends User{
+
     private String domaine;
     private String structure;
 
@@ -25,7 +30,7 @@ public class Participant extends User{
 
     }
 
-    public Participant(int id, String name, String phone, String email, String password, Boolean status, Role role, String domaine, String structure) {
+    public Participant(long id, String name, String phone, String email, String password, Boolean status, Role role, String domaine, String structure) {
         super(id, name, phone, email, password, status, role);
         this.domaine = domaine;
         this.structure = structure;

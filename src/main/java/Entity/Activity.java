@@ -1,9 +1,6 @@
 package Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -14,10 +11,13 @@ public class Activity {
     private int id;
     private String title;
     private String dess;
+    @Enumerated(EnumType.STRING)
     private Type type;
     private Date startDate;
     private Date endDate;
+    @Enumerated(EnumType.STRING)
     private Status status;
+    @ManyToOne
     private Responsable responsable;
 
     public int getId() {

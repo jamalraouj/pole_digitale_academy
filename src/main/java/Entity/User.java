@@ -2,27 +2,36 @@ package Entity;
 
 import jakarta.persistence.*;
 
+//@Entity
+//@Inheritance(strategy=InheritanceType.JOINED)
+//@Table(name="users")
+//@MappedSuperclass
+//@Entity
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Entity
+@Table(name="users" )
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String name;
     private String phone;
     private String email;
     private String password;
     private Boolean Status;
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     public User() {
 
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -70,7 +79,7 @@ public class User{
         return role;
     }
 
-    public User(int id, String name, String phone, String email, String password, Boolean status, Role role) {
+    public User(long id, String name, String phone, String email, String password, Boolean status, Role role) {
         this.id = id;
         this.name = name;
         this.phone = phone;
