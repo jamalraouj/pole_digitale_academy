@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pole_digitale_academy:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>pole_digitale_academy</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Pole_Digital_Academy-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="pole_digitale_academy:war exploded" />
+    </root>
+  </artifact>
+</component>
